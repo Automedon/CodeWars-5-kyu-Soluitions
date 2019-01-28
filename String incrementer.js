@@ -16,8 +16,4 @@ foo099 -> foo100
 
 Attention: If the number has leading zeros the amount of digits should be considered.
 */
-function incrementString(input) {
-  return input.replace(/([0-8]?)(9*)$/, function(s, d, ns) {
-      return +d + 1 + ns.replace(/9/g, '0');
-    });
-}
+let incrementString = str => str.replace(/([0-8]|\d?9+)?$/, (e) => e ? + e + 1 : 1)
